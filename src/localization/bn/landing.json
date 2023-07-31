@@ -1,0 +1,26 @@
+{
+  "landing.title": "Learn Regex step by step, from zero to advanced.",
+  "landing.description": "Learning Regex is easier than you think. You can use this tool to easily `learn`, `practice`, `test` and `share` Regex.",
+  "landing.imageAltText": "Illustration of a relaxed man with his legs on the table.",
+
+  "section.learn.title": "Learn",
+  "section.learn.content": "`Regular Expressions`, abbreviated as Regex or Regexp, are a string of characters created within the framework of Regex syntax rules. You can easily manage your data with Regex, which uses commands like finding, matching, and editing. Regex can be used in programming languages such as Python, SQL, JavaScript, R, Google Analytics, Google Data Studio, and throughout the coding process. Learn regex online with examples and tutorials on RegexLearn now.",
+  "section.learn.imageAltText": "Illustration of a mountain with a flag on its summit.",
+
+  "section.cheatsheet.button": "Review Now",
+  "section.cheatsheet.title": "Cheatsheet",
+  "section.cheatsheet.content": "With `RegexLearn Cheatsheet`, you can see all of the usages you need at once and check them directly from the one page. Explore all Regex patterns and symbols with the Regex cheat sheet.",
+  "section.cheatsheet.imageAltText": "Illustration of a man viewing pages through binoculars.",
+
+  "section.playground.title": "Playground",
+  "section.playground.content": "If you want to generate a Regex, you can easily build and test your Regex pattern via the Playground. As a Regex tester, you can validate and share your Regex with others for collaborative work.",
+  "section.playground.imageAltText": "Illustration of a cat about to drop a full glass.",
+
+  "section.practice.title": "Practice",
+  "section.practice.content": "If you complete the learning part, it's time to PRACTICE! In the practice section, you can test your Regex knowledge and practice with Regex tutorials based on your level. Soon.",
+  "section.practice.imageAltText": "Illustration of a woman taking notes from a book.",
+
+  "section.opensource.title": "Open Source",
+  "section.opensource.content": "Regex Learn is an open-source project that welcomes community contributions and is free to use. Working on this project allows you to hone your skills, study, and collaborate.  You can contribute & support here.",
+  "section.opensource.imageAltText": "Illustration of a woman, a man, and a cat putting together puzzle pieces."
+}

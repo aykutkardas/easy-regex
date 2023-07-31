@@ -1,0 +1,49 @@
+{
+  "lesson.regexForSeo.starter.title": "Regex for SEO",
+  "lesson.regexForSeo.starter.description": "Regex is a set of regular expressions frequently used in many fields, especially by people who want to increase their productivity. The advantages of using Regex for SEO are that it makes it easier to analyze big data and write richer filters. We recommend starting with the `Regex 101` tutorial if you are new to Regex. \\n\\nStart by typing `OK` in the Regex field to proceed to the first step and access more detailed explanations.",
+
+  "lesson.regexForSeo.usage.title": "Use Cases",
+  "lesson.regexForSeo.usage.description": "You can use Regex for SEO on platforms such as `Google Analytics`, `Google Data Studio`, `Google Sheets`, `Google Search Console`, `Ahrefs`, `Deepcrawl`, `Screaming Frog`. It is also frequently used in `.htaccess` and `robots.txt (regex-like syntax)` files.\\n\\nBelow is a sample regex that will select only texts in the list that start with `Google`.",
+
+  "lesson.regexForSeo.basics.title": "Basics",
+  "lesson.regexForSeo.basics.description": "Let's take a look at some Regexes that you will use frequently. We recommend that you review the `Regex 101` tutorial to learn more about these. Type `Yes` to get started.",
+
+  "lesson.regexForSeo.or.title": "Or Operator `|`",
+  "lesson.regexForSeo.or.description": "We use the Or operator `|` to filter out multiple expressions. For example, filter text containing `seo` and `regex` by writing the two words, separating them with the Or operator `|`.",
+
+  "lesson.regexForSeo.optional.title": "Optional Operator `?`",
+  "lesson.regexForSeo.optional.description": "We use it to express that an expression or character is optional. For example, we want to filter text containing both `http` and `https`. We can use the Or operator `|` for this operation, but there is a better way for these two almost identical words.\\n\\nIn this example, the letter `s` is optional. Instead, add a question mark `?` to the end of the letter `s`.",
+
+  "lesson.regexForSeo.any.title": "Anything `.*`",
+  "lesson.regexForSeo.any.description": "In regex, the period `.` can match anything, including spaces. But this match is only for a single character where it is used. The asterisk character `*` means that the preceding item does not exist at all or occurs more than once in the text. When the two are used together, it means that there can be an element of unlimited length where used.\\n\\nBelow are various keywords. Add `.*` to the end of the regex to write the expression that starts with `how to write` and matches everything after it.",
+
+  "lesson.regexForSeo.contains.title": "Contains",
+  "lesson.regexForSeo.contains.description": "To filter the text that contains the words or phrases we're looking for, we write the word we're looking for between our two phrases `.*` that match everything. For example, type `.*buy.*` to filter out what includes `buy`.",
+
+  "lesson.regexForSeo.negated.title": "Negated Character Sets `[^abc]`",
+  "lesson.regexForSeo.negated.description": "We use the negated character sets `[^]` to denote characters we don't want to be included. The characters we do not want to be included are written in square brackets with a caret at the beginning. Below are both `http` and `https`. Since `http` occurs in both, it will also choose `https`. Type `[^s]` after the letter `p` to exclude the letter `s`.",
+
+  "lesson.regexForSeo.caret.title": "Caret Sign `^`",
+  "lesson.regexForSeo.caret.description": "Let's say we have a list of URLs, and we want to find only those URLs that start with `http`. But URLs also contain `http` in different parts other than their beginning. So add a caret `^` to the beginning of the following expression to filter out only those starting with `http`.",
+
+  "lesson.regexForSeo.dollarAndEscape.title": "Dollar Sign `$` and Escape Character `\\`",
+  "lesson.regexForSeo.dollarAndEscape.description": "Again we have a list of URLs. We want to find only those URLs ending in `.htm`.\\n\\nSince the period `.` is a special character that matches everything, we first need to disable the period before `htm` using the escape character `\\`. This applies to all special characters.\\n\\nThen add a `$` sign to the end of the expression. This ensures that the text to be filtered ends with the expression written before it.",
+
+  "lesson.regexForSeo.limitation.title": "Length Restrictions `{n}`",
+  "lesson.regexForSeo.limitation.description": "We may want to filter the results by character lengths. For example, to filter URLs that are `35` characters long, type the number you want to use for the length, `{35}`, using curly braces at the end of the period `.`.",
+
+  "lesson.regexForSeo.maxLimitation.title": "Length Restrictions (Maximum) `{n,m}`",
+  "lesson.regexForSeo.maxLimitation.description": "To filter URLs with a maximum length of `35` characters, type `{1,35}` the minimum and maximum number values we will use for the length, using curly braces at the end of the period `.`.",
+
+  "lesson.regexForSeo.minLimitation.title": "Length Restrictions (Minumum) `{n,}`",
+  "lesson.regexForSeo.minLimitation.description": "To filter URLs with a minimum length of `35` characters, type `{35,}` using curly braces at the end of the period and ending with a comma for the minimum number value we will use for the length.",
+
+  "lesson.regexForSeo.robots.title": "robots.txt (regex-like syntax)",
+  "lesson.regexForSeo.robots.description": "Here is an example of regex-like usage in the `robots.txt` file. The example states that bots should not crawl links with the extension `pdf`.",
+
+  "lesson.regexForSeo.htaccess.title": ".htaccess",
+  "lesson.regexForSeo.htaccess.description": "Here is an example of using regex in the `.htaccess` file. In the example, `php` extension links are directed to `html` extensions with `301` code.",
+
+  "lesson.regexForSeo.outro.title": "Outro",
+  "lesson.regexForSeo.outro.description": "Regex knowledge is a skill that increases productivity on any platform that allows you to use regex. Once you start using it and improve this skill, it will help you complete many repetitive tasks faster and save time for other things. To better understand the basics of Regex, you can visit the `Regex 101` tutorial. You can use the `Playground` page to test your expressions on your texts."
+}

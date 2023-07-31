@@ -7,6 +7,7 @@ export const langNames = {
   ru: '🇷🇺',
   'zh-cn': '🇨🇳',
   uk: '🇺🇦',
+  bn: '🇧🇩',
 };
 
 export const defaultLocale = 'en';

@@ -1,0 +1,39 @@
+{
+  "general.prev": "পূর্ববর্তি",
+  "general.next": "পরবর্তী",
+  "general.result": "ফলাফল",
+  "general.regex": "রিজেক্স",
+  "general.text": "টেক্সট",
+  "general.watch": "দেখুন",
+  "general.start": "শুরু",
+  "general.continue": "চালিয়ে যান",
+  "general.completedStep": "ধাপ সম্পন্ন!",
+  "general.hintQuestion": "উত্তর দেখুন",
+  "general.reportStep": "সমস্যা জানান",
+  "general.startLearning": "শেখা শুরু করুন",
+  "general.comingSoon": "আসছে",
+  "general.becomeSponsor": "স্পনসর হওন",
+  "general.learn": "শিখুন",
+  "general.playground": "প্লেগ্রাউন্ড",
+  "general.cheatsheet": "চিটশিট",
+  "general.ourSponsors": "আমাদের স্পনসরগণ",
+  "general.share": "শেয়ার",
+  "general.shareLinkCopied": "শেয়ার লিংক কপি হয়েছে!",
+  "general.somethingWentWrong": "কোনো গন্ডগোল হয়েছে!",
+
+  "notFound.intro": "আপনি যে পেজটি খুঁজছেন, সেটি পাওয়া যায়নি",
+  "notFound.button": "নীড়পাতায় ফিরে যান",
+
+  "page.landing.title": "Regex Learn - শিখুন ধাপে ধাপে, শুন্য থেকে এডভান্সড পর্যন্ত",
+  "page.learn.title": "Regex Learn - রিজেক্স ইন্টারএকটিভ কোর্স",
+  "page.cheatsheet.title": "Regex Learn - রিজেক্স চিটশিট",
+  "page.playground.title": "Regex Learn - প্লেগ্রাউন্ড",
+  "page.404.title": "Regex Learn - পাওয়া যায়নি",
+
+  "page.landing.description": "রিজেক্স শিখুন ইন্টারেকটিভ উপায়ে, নিজের মত চর্চা করুন এবং অন্যদের সাথে শেয়ার করুন আপনার রিজেক্স।",
+  "page.learn.description": "ধাপে ধাপে রিজেক্স শিখুন। এই রিজেক্স ইন্টারএকটিভ টিউটোরিয়ালটির মাধ্যমে আপনি দ্রুততর ও সহজতরভাবে রিজেক্স শিখতে পারবেন।",
+  "page.cheatsheet.description": "কিছু কিছু সময় আপনাকে রিজেক্স মনে করতে হবে। এই চিটশিটের মাধ্যমে আপনি সহজে রিজেক্স বুঝতে ও মনে করতে পারবেন।",
+  "page.playground.description": "প্লেগ্রাউন্ডের মাধ্যমে আপনি সহজেই আপনার রিজেক্স প্যাটার্ন অনলাইনে তৈরি করতে পারবেন।",
+
+  "learn.safari.unsupportWarning": "এই ধাপের রিজেক্স কিছু কিছু ব্রাউজারে সমর্থিত নয়। এই ধাপ পার হতে যদি আপনি সমস্যা বোধ করেন, তাহলে এখানে ক্লিক করতে পারেন।"
+}
