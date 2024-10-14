@@ -68,6 +68,16 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           <meta name="twitter:title" content={metadata.title} />
           <meta name="twitter:description" content={metadata.description} />
           <meta name="twitter:image" content={baseURL + '/images/og-regexlearn-image.jpg'} />
+          {direction === 'rtl' && (
+            <>
+              <link
+                href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+                rel="stylesheet"
+                type="text/css"
+              />
+              <link rel="stylesheet" href="/css/rtl.css" />
+            </>
+          )}
         </Head>
       )}
       <div dir={direction} className="flex flex-col h-screen text-neutral-50 font-openSans">

@@ -1,0 +1,10 @@
+body {
+  font-family: Vazirmatn, sans-serif !important;
+  font-weight: 300;
+  direction: rtl;
+  background-color: #E2E2E2;
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6, input, textarea, p, span {
+  font-family: Vazirmatn, sans-serif !important;
+}
