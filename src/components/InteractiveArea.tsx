@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback, useContext } from 'react';
+import { useState, useEffect, useRef, useCallback, useContext, isValidElement } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import useEventListener from '@use-it/event-listener';
 import cx from 'clsx';
@@ -7,6 +7,7 @@ import confetti from 'canvas-confetti';
 
 const ReportStep = dynamic(import('src/components/ReportStep'), { ssr: false });
 const Hint = dynamic(import('src/components/Hint'), { ssr: false });
+const ErrorPopover = dynamic(import('src/components/ErrorPopover'), { ssr: false });
 import FlagBox from 'src/components/FlagBox';
 import Icon from 'src/components/Icon';
 import setCaretPosition from 'src/utils/setCaretPosition';
@@ -39,6 +40,8 @@ const InteractiveArea = ({ isShow, setIsOpenModal }: Props) => {
   const { formatMessage } = useIntl();
   const regexInput = useRef<HTMLInputElement>(null);
   const [regex, setRegex] = useState(data.initialValue || '');
+  const [isvalidRegexSyntax, setIsvalidRegexSyntax] = useState(true);
+  const [errors, setErrors] = useState([]);
   const [flags, setFlags] = useState(data.initialFlags || '');
   const [content, setContent] = useState('');
   const [isChanged, setIsChanged] = useState(false);
@@ -104,15 +107,21 @@ const InteractiveArea = ({ isShow, setIsOpenModal }: Props) => {
       if (!checkBrowserSupport()) return;
     }
 
-    const { isSuccess, isMatch, err, regex: grouppedRegex } = checkRegex(data, { regex, flags });
+    const { isSuccess, isMatch, error, regex: grouppedRegex } = checkRegex(data, { regex, flags });
 
-    if (err) {
+    if (error) {
       setError(true);
       setMatch(false);
       setSuccess(false);
+      if (error.type === 'InvalidRegex') {
+        setIsvalidRegexSyntax(false);
+        setErrors([error]);
+      } else {
+        setIsvalidRegexSyntax(true);
+        setErrors([]);
+      }
       return;
     }
-
     setError(false);
     setMatch(isMatch);
     setSuccess(isSuccess);
@@ -146,11 +155,11 @@ const InteractiveArea = ({ isShow, setIsOpenModal }: Props) => {
 
   const onFocus = e => {
     if (data.readOnly) {
-        return;
+      return;
     }
 
     onChange(e);
-  }
+  };
 
   const focusInput = () => {
     regexInput?.current?.focus();
@@ -205,7 +214,8 @@ const InteractiveArea = ({ isShow, setIsOpenModal }: Props) => {
   }).toLowerCase();
 
   return (
-    <div dir='ltr'
+    <div
+      dir="ltr"
       className={cx({
         '[&_.highlight]:bg-red-400 ': error,
         '[&_.highlight]:bg-yellow-600': match,
@@ -244,28 +254,36 @@ const InteractiveArea = ({ isShow, setIsOpenModal }: Props) => {
         {!data.noHint && (
           <Hint hiddenFlags={data.hiddenFlags} regex={data.regex} flags={data.flags} />
         )}
-        <div
-          className={cx(
-            'bg-jet-500 px-4 py-1 mb-3 rounded-md flex items-center justify-center max-w-[90%]',
-            "before:content-['/'] before:text-neutral-500",
-            "after:content-['/'_attr(data-flags)] after:text-neutral-500",
-            { 'after:hidden before:hidden': data.hiddenFlags },
-          )}
-          data-flags={flags}
-        >
-          <input
-            ref={regexInput}
-            key={step}
-            type="text"
-            className="bg-transparent border-0 outline-none !ring-0 text-center max-w-[440px] min-w-[60px] px-2 text-sm tracking-widest text-regreen-400"
-            style={{ width: regex.length * 12 || 60 }}
-            readOnly={data.readOnly}
-            value={data.visibleRegex || regex}
-            onChange={onChange}
-            onFocus={onFocus}
-            placeholder={placeholder}
-            spellCheck={false}
-          />
+        <div className="flex items-center">
+          <div
+            className={cx(
+              'bg-jet-500 px-4 py-1 mb-3 rounded-md flex items-center justify-center max-w-[90%]',
+              "before:content-['/'] before:text-neutral-500",
+              "after:content-['/'_attr(data-flags)] after:text-neutral-500",
+              { 'after:hidden before:hidden': data.hiddenFlags },
+            )}
+            data-flags={flags}
+          >
+            <input
+              ref={regexInput}
+              key={step}
+              type="text"
+              className={cx({
+                'bg-transparent border-0 outline-none !ring-0 text-center max-w-[440px] min-w-[60px] px-2 text-sm tracking-widest':
+                  true,
+                'text-regreen-400': isvalidRegexSyntax,
+                'text-red-400': !isvalidRegexSyntax,
+              })}
+              style={{ width: regex.length * 12 || 60 }}
+              readOnly={data.readOnly}
+              value={data.visibleRegex || regex}
+              onChange={onChange}
+              onFocus={onFocus}
+              placeholder={placeholder}
+              spellCheck={false}
+            />
+          </div>
+          <div className="mb-3 w-12">{errors.length > 0 && <ErrorPopover errors={errors} />}</div>
         </div>
         {data.videoURL && (
           <div
